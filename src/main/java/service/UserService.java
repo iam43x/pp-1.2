@@ -18,7 +18,7 @@ public class UserService {
 
     public static UserService getInstance() throws SQLException {
 
-        return userService==null?new UserService(new UserDAO(UserDAO.getConnection())):userService;
+        return userService==null?new UserService(new UserDAO()):userService;
     }
 
     public List<User> getAllUsers() throws SQLException {
@@ -35,5 +35,9 @@ public class UserService {
 
     public void updateUser(String name,Long id) throws SQLException {
         userDAO.updateUser(name,id);
+    }
+
+    public User getUserById(Long id) throws SQLException {
+        return userDAO.getUserById(id);
     }
 }

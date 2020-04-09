@@ -27,4 +27,9 @@ public class AddUser extends HttpServlet {
             e.printStackTrace();
         }
     }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("create.jsp").forward(req,resp);
+    }
 }
