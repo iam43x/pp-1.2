@@ -16,7 +16,8 @@ import java.util.List;
 public class UpdateUser extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-      String name=req.getParameter("name");
+        req.setCharacterEncoding("UTF-8");
+        String name=req.getParameter("name");
       try{
           Long id=Long.parseLong(req.getParameter("id"));
           UserService.getInstance().updateUser(name,id);
